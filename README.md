@@ -9,6 +9,6 @@ This project is made for happy new project of codingyahac.
 
 이 프로젝트는 코딩야학 Happy new project를 위해 만들어졌습니다. 
 
-Focus on this project is make a website prototype what i've been wanted to make. Code quality might me low, But I'm planning to renewal later.
+Focus on this project is make a website prototype what i've been wanted to make. Code quality might be low, But I'm planning to renewal later.
 
 이 프로젝트의 핵심은 옛날부터 만들고 싶었던 웹사이트의 프로토타입을 만드는 것입니다. 코드는 허접하겠지만 나중에 리뉴얼할 예정입니다.
