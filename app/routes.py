@@ -11,3 +11,8 @@ today_meal = meal[now.weekday()]
 @app.route('/index')
 def index():
     return render_template('index.html', meal = meal, today_meal = today_meal)
+
+@app.route('/debug')
+def debug():
+    cached_meal = crawl.get_cached_meal()
+    return render_template("debug.html", meal = meal, now = now, cached_meal = cached_meal)

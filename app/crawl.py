@@ -1,7 +1,6 @@
 import requests
 
 meal = None
-lastcrawled = None
 
 def get_page(url):
     return requests.get(url).text
@@ -34,4 +33,8 @@ def get_meal():
     if meal == None:
         html = get_page("http://www.kopo.ac.kr/anseong/content.do?menu=3295")
         meal = parse_page(html)
+    return meal
+
+# for debugging
+def get_cached_meal():
     return meal
