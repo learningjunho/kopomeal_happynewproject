@@ -51,6 +51,16 @@ def get_meal():
         nextcrawl = get_expiration_date(datetime.date.today())
     return meal
 
+def recrawl_meal():
+    global meal
+    global lastcrawl
+    global nextcrawl
+    html = get_page("http://www.kopo.ac.kr/anseong/content.do?menu=3295")
+    meal = parse_page(html)
+    lastcrawl = datetime.datetime.now()
+    nextcrawl = get_expiration_date(datetime.date.today())
+    return meal
+
 # for debugging
 def get_cached_meal():
     return meal

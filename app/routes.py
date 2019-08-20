@@ -18,3 +18,9 @@ def index():
 def debug():
     cached_meal = crawl.get_cached_meal()
     return render_template("debug.html", meal = meal, cached_meal = cached_meal, lastcrawl = crawl.lastcrawl, nextcrawl = crawl.nextcrawl)
+
+@app.route('/recrawl')
+def recrawl():
+    global meal
+    meal = crawl.recrawl_meal()
+    return "재크롤링 완료 <a href ='/debug'> 돌아가기 </a>  "
