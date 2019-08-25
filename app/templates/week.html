@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안성 폴리텍 학식 알리미</title>
+    <style>
+
+        h1{
+            font-size: 25px;
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+            margin-top:30px;
+        }
+        .container{
+            margin: 20px 20px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .title{
+            background-color:#05AFF2;
+            text-align:center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height:25%;
+            color:white;
+            font-weight:bold;
+        }
+        .content{
+            background-color:#F2F2F2;
+            min-height: 80px;
+            padding: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+<h1>이번주 학식</h1>
+{% for today_meal in meal %}
+    <h3>
+    {% if loop.index == 1 %}
+    월요일
+    {% elif loop.index == 2 %}
+    화요일
+    {% elif loop.index == 3 %}
+    수요일
+    {% elif loop.index == 4 %}
+    목요일
+    {% elif loop.index == 5 %}
+    금요일
+    {% elif loop.index == 6 %}
+    토요일
+    {% elif loop.index == 7 %}
+    일요일
+    {% endif %}
+    </h3>
+    {% for i in today_meal %}
+    <div class = "container">
+        <div class = "title">
+            {% if loop.index == 1 %}
+                아침
+            {% elif loop.index == 2 %}
+                점심
+            {% elif loop.index == 3 %}
+                저녁
+            {% endif %}
+        </div>
+        <div class = "content">
+            {{ i }}
+        </div>
+    </div>
+    {% endfor %}
+
+{% endfor %}
+
+</body>
+</html>
