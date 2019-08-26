@@ -12,7 +12,11 @@ def index():
     meal = crawl.get_meal()
     now = datetime.datetime.now()
     today_meal = meal[now.weekday()]
-    return render_template('index.html', meal = meal, today_meal = today_meal)
+    try:
+        tomorrow_meal = meal[now.weekday() + 1]
+    except IndexError:
+        tomorrow_meal = ["미정", "", ""]
+    return render_template('index.html', meal = meal, today_meal = today_meal, tomorrow_meal = tomorrow_meal)
 
 @app.route('/week')
 def week():

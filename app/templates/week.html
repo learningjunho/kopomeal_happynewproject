@@ -7,12 +7,13 @@
     <style>
 
         h1{
-            font-size: 25px;
+            font-size: 20px;
             text-align: center;
         }
         h3{
             text-align: center;
             margin-top:30px;
+            font-weight:normal;
         }
         .container{
             margin: 20px 20px;
@@ -35,6 +36,11 @@
             padding: 0 10px;
         }
         
+        .change{
+            margin-top:10px;
+            text-align:center;
+            display:block;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +81,6 @@
     {% endfor %}
 
 {% endfor %}
-
+<a class="change" href="/index">오늘/내일 학식 보기</a>
 </body>
 </html>

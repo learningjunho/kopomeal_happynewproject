@@ -7,8 +7,11 @@
     <style>
 
         h1{
-            font-size: 25px;
+            font-size: 20px;
             text-align: center;
+        }
+        .margin{
+            margin-top:100px;
         }
         .container{
             margin: 20px 20px;
@@ -30,7 +33,11 @@
             min-height: 80px;
             padding: 0 10px;
         }
-        
+        .change{
+            margin-top:10px;
+            text-align:center;
+            display:block;
+        }
     </style>
 </head>
 <body>
@@ -51,5 +58,25 @@
     </div>
 </div>
 {% endfor %}
+<div class = "margin"></div>
+<h1>내일의 학식</h1>
+{% for meal in tomorrow_meal %}
+<div class = "container">
+    <div class = "title">
+        {% if loop.index == 1 %}
+            아침
+        {% elif loop.index == 2 %}
+            점심
+        {% elif loop.index == 3 %}
+            저녁
+        {% endif %}
+    </div>
+    <div class = "content">
+        {{ meal }}
+    </div>
+</div>
+{% endfor %}
+
+<a class="change" href="/week">이번주 전체 학식 보기</a>
 </body>
 </html>
