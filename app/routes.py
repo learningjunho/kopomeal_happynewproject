@@ -15,7 +15,7 @@ def index():
     try:
         tomorrow_meal = meal[now.weekday() + 1]
     except IndexError:
-        tomorrow_meal = ["미정", "", ""]
+        tomorrow_meal = ["아직 확인되지 않았습니다.", "", ""]
     return render_template('index.html', meal = meal, today_meal = today_meal, tomorrow_meal = tomorrow_meal)
 
 @app.route('/week')
